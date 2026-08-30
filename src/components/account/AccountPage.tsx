@@ -18,6 +18,7 @@ import { getTheme, setTheme, type ThemeMode } from '../../stores/themeStore';
 import { useDashboardRefreshStore } from '../../stores/dashboardRefreshStore';
 import { useVehicleContextStore } from '../../stores/vehicleContextStore';
 import type { UserProfile } from '../../types';
+import { saveJsonBackupFile } from '../../utils/downloadFile';
 
 interface AccountPageProps {
   userId: string;
@@ -48,32 +49,6 @@ function readLastBackupAt(): string | null {
   } catch {
     return null;
   }
-}
-
-async function saveBackupFile(json: string, filename: string): Promise<'shared' | 'downloaded'> {
-  const file = new File([json], filename, { type: 'application/json' });
-
-  if (
-    typeof navigator.share === 'function' &&
-    typeof navigator.canShare === 'function' &&
-    navigator.canShare({ files: [file] })
-  ) {
-    await navigator.share({
-      files: [file],
-      title: 'Respaldo A Los Pits',
-      text: 'Respaldo de datos de A Los Pits',
-    });
-    return 'shared';
-  }
-
-  const blob = new Blob([json], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = filename;
-  anchor.click();
-  URL.revokeObjectURL(url);
-  return 'downloaded';
 }
 
 export function AccountPage({ userId, onResetComplete }: AccountPageProps) {
@@ -160,7 +135,7 @@ export function AccountPage({ userId, onResetComplete }: AccountPageProps) {
       const date = new Date().toISOString().slice(0, 10);
       const filename = `alospits-backup-${date}.json`;
       const json = JSON.stringify(backup, null, 2);
-      const method = await saveBackupFile(json, filename);
+      const method = await saveJsonBackupFile(json, filename);
 
       const exportedAt = new Date().toISOString();
       localStorage.setItem(STORAGE_KEYS.lastBackupAt, exportedAt);
@@ -279,7 +254,9 @@ export function AccountPage({ userId, onResetComplete }: AccountPageProps) {
         </p>
 
         <ol className="mt-3 list-decimal space-y-1 pl-4 text-xs text-slate-300">
-          <li>En el dispositivo actual, pulsa <strong className="font-medium">Exportar respaldo</strong>.</li>
+          <li>
+            En el dispositivo actual, pulsa <strong className="font-medium">Exportar respaldo</strong>.
+          </li>
           <li>Envía el archivo (.json) por WhatsApp, correo, Drive u otro medio.</li>
           <li>En el nuevo dispositivo, abre A Los Pits → Mi cuenta → Importar respaldo.</li>
         </ol>
