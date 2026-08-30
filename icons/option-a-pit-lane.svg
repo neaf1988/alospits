@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  <rect x="64" y="368" width="384" height="80" rx="12" fill="#1e293b"/>
+  <g transform="translate(96 384)">
+    <rect width="40" height="40" fill="#f97316"/>
+    <rect x="40" width="40" height="40" fill="#f8fafc"/>
+    <rect y="40" width="40" height="40" fill="#f8fafc"/>
+    <rect x="40" y="40" width="40" height="40" fill="#f97316"/>
+    <rect x="80" width="40" height="40" fill="#f97316"/>
+    <rect x="120" width="40" height="40" fill="#f8fafc"/>
+    <rect x="80" y="40" width="40" height="40" fill="#f8fafc"/>
+    <rect x="120" y="40" width="40" height="40" fill="#f97316"/>
+    <rect x="160" width="40" height="40" fill="#f97316"/>
+    <rect x="200" width="40" height="40" fill="#f8fafc"/>
+    <rect x="160" y="40" width="40" height="40" fill="#f8fafc"/>
+    <rect x="200" y="40" width="40" height="40" fill="#f97316"/>
+    <rect x="240" width="40" height="40" fill="#f97316"/>
+    <rect x="280" width="40" height="40" fill="#f8fafc"/>
+    <rect x="240" y="40" width="40" height="40" fill="#f8fafc"/>
+    <rect x="280" y="40" width="40" height="40" fill="#f97316"/>
+  </g>
+  <path fill="#334155" d="M128 280h256c8 0 14 6 14 14v24c0 8-6 14-14 14h-20l-16 32h-48l-16-32h-20c-8 0-14-6-14-14v-24c0-8 6-14 14-14z"/>
+  <path fill="#f97316" d="M160 280c0-44 36-80 96-80s96 36 96 80H160z"/>
+  <circle cx="176" cy="332" r="28" fill="#1e293b" stroke="#475569" stroke-width="8"/>
+  <circle cx="176" cy="332" r="12" fill="#64748b"/>
+  <circle cx="336" cy="332" r="28" fill="#1e293b" stroke="#475569" stroke-width="8"/>
+  <circle cx="336" cy="332" r="12" fill="#64748b"/>
+  <path fill="#fb923c" d="M352 168l24 48 48 24-48 24-24 48-24-48-48-24 48-24 24-48z" opacity="0.9"/>
+</svg>
