@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" ry="112" fill="#0f172a"/>
+
+  <g transform="translate(256, 256)">
+    <circle r="195" fill="#1e293b"/>
+
+    <g fill="#0f172a">
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(45)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(90)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(135)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(180)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(225)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(270)" />
+      <path d="M -12 -195 L 0 -170 L 12 -195 L 0 -182 Z" transform="rotate(315)" />
+    </g>
+
+    <circle r="145" fill="#0f172a"/>
+    <circle r="135" fill="#1e293b"/>
+
+    <circle r="115" fill="none" stroke="#334155" stroke-width="12" stroke-dasharray="14 8"/>
+
+    <path
+      d="M -81.3 81.3 A 115 115 0 1 1 99.6 -57.5"
+      fill="none"
+      stroke="url(#orangeGrad)"
+      stroke-width="16"
+      stroke-linecap="round"
+    />
+
+    <circle r="22" fill="#334155"/>
+    <circle r="14" fill="#f97316"/>
+
+    <g transform="rotate(55)">
+      <path d="M -5,0 L 5,0 L 0,-92 Z" fill="url(#orangeGrad)"/>
+      <circle cx="0" cy="0" r="5" fill="#0f172a"/>
+    </g>
+
+    <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+  </g>
+</svg>

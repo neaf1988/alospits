@@ -1,0 +1,57 @@
+Prioridad media (specs y UX)
+
+5. **Light mode**  
+   Spec pide dark/light; solo hay tema oscuro fijo en `index.css`.
+
+6. **Pantalla de configuración de alertas**  
+   Preferencias de notificación (cuando reactives push) y quizá umbrales.
+
+7. **Iconos PWA para instalación**  
+   Solo `favicon.svg`; conviene PNG 192/512 para “Agregar a pantalla de inicio”.
+
+8. **Reglas normativas automáticas (opcional)**  
+   Spec menciona tecnomecánica a 5 años (carro) / 2 años (moto) para vehículos nuevos — no hay cálculo ni sugerencia automática.
+
+9. **Km diarios en UI**  
+   El motor lo usa para proyección de mantenimiento (`maintenanceProjection.ts`), pero no se muestra como métrica explícita en el dashboard.
+
+### Prioridad baja / calidad
+
+10. **Tests automatizados**  
+    No hay tests en el repo (solo dependencias).
+
+11. **Actualizar spec 02**  
+    Documentación aún dice `categoryA`/`categoryB`; el código ya usa A1–B3.
+
+12. **Hoja de vida**  
+    PDF no incluye seguro todo riesgo en cumplimiento (sí está en la app).
+
+---
+
+## Mapa rápido por spec
+
+| Spec | Pendiente principal |
+|------|---------------------|
+| **00** | Background Sync, push 6 AM (pausado), light mode |
+| **03** | Editar vehículos |
+| **04** | UI historial tanqueos; km diarios visible |
+| **05** | Push 30/15/5/1 días (pausado; alertas in-app ✅) |
+| **06** | PDF ✅ (pequeños ajustes opcionales) |
+
+---
+
+## Orden sugerido si sigues sin backend
+
+1. Historial + editar/eliminar tanqueos  
+2. Editar/eliminar vehículo  
+3. Light mode  
+4. Iconos PWA e instalación  
+5. Tests en servicios críticos (odómetro, alertas, CPK)
+
+Cuando definas hosting:
+
+6. Auth + sync + push (reactivar módulo existente)
+
+¿Quieres que empecemos por tanqueos (historial + edición) o por edición de vehículos?
+
+[REDACTED]

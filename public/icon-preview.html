@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Los Pits — Opciones de icono</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #020617;
+        color: #e2e8f0;
+        padding: 2rem 1rem 3rem;
+      }
+      h1 {
+        text-align: center;
+        color: #f97316;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .subtitle {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #0f172a;
+        border: 1px solid #334155;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        transition: border-color 0.2s;
+      }
+      .card:hover { border-color: #f97316; }
+      .card h2 {
+        margin: 0 0 0.25rem;
+        font-size: 1.1rem;
+        color: #f8fafc;
+      }
+      .card p {
+        margin: 0 0 1rem;
+        font-size: 0.8rem;
+        color: #94a3b8;
+        line-height: 1.4;
+      }
+      .sizes {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        min-height: 140px;
+      }
+      .sizes img { display: block; border-radius: 12px; }
+      .sizes .lg { width: 128px; height: 128px; }
+      .sizes .md { width: 64px; height: 64px; }
+      .sizes .sm { width: 32px; height: 32px; border-radius: 6px; }
+      code {
+        display: block;
+        background: #1e293b;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 0.75rem;
+        color: #fb923c;
+        word-break: break-all;
+      }
+      .note {
+        max-width: 960px;
+        margin: 2rem auto 0;
+        padding: 1rem 1.25rem;
+        background: #1e293b;
+        border-radius: 0.75rem;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .note strong { color: #f97316; }
+    </style>
+  </head>
+  <body>
+    <h1>A Los Pits — 3 opciones de icono</h1>
+    <p class="subtitle">Compara cómo se ven en distintos tamaños. Dime cuál prefieres (A, B o C).</p>
+
+    <div class="grid">
+      <article class="card">
+        <h2>Opción A — Pit Lane</h2>
+        <p>Auto en boxes con bandera a cuadros. Evoca “Los Pits” y carrera.</p>
+        <div class="sizes">
+          <img class="lg" src="/icons/option-a-pit-lane.svg" alt="Opción A grande" />
+          <img class="md" src="/icons/option-a-pit-lane.svg" alt="Opción A mediana" />
+          <img class="sm" src="/icons/option-a-pit-lane.svg" alt="Opción A pequeña" />
+        </div>
+        <code>option-a-pit-lane.svg</code>
+      </article>
+
+      <article class="card">
+        <h2>Opción B — Llanta / km</h2>
+        <p>Neumático con odómetro. Conecta con labrado, km y mantenimiento.</p>
+        <div class="sizes">
+          <img class="lg" src="/icons/option-b-tire.svg" alt="Opción B grande" />
+          <img class="md" src="/icons/option-b-tire.svg" alt="Opción B mediana" />
+          <img class="sm" src="/icons/option-b-tire.svg" alt="Opción B pequeña" />
+        </div>
+        <code>option-b-tire.svg</code>
+      </article>
+
+      <article class="card">
+        <h2>Opción C — Monograma P</h2>
+        <p>Letra P sobre carril. Limpio, legible en pantalla de inicio.</p>
+        <div class="sizes">
+          <img class="lg" src="/icons/option-c-monogram.svg" alt="Opción C grande" />
+          <img class="md" src="/icons/option-c-monogram.svg" alt="Opción C mediana" />
+          <img class="sm" src="/icons/option-c-monogram.svg" alt="Opción C pequeña" />
+        </div>
+        <code>option-c-monogram.svg</code>
+      </article>
+    </div>
+
+    <div class="note">
+      <strong>Para aplicar la que elijas:</strong> copia el SVG elegido sobre
+      <code>public/icon-source.svg</code> y ejecuta <code>npm run icons:generate</code>
+      seguido de <code>npm run build</code>.
+    </div>
+  </body>
+</html>

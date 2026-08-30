@@ -1,0 +1,32 @@
+---
+description: Reglas globales, arquitectura y guías de desarrollo para la PWA A Los Pits (.ALosPits)
+globs: **/*
+---
+
+# A Los Pits (.ALosPits) — System Prompt & Dev Rules
+
+## 1. Identidad del Proyecto
+**A Los Pits** es una PWA (Progressive Web App) Offline-First diseñada para conductores de vehículos particulares (carros y motos) en Colombia. Permite la gestión total de mantenimiento, tanqueo, impuestos y vencimiento de documentos para un máximo de 2 vehículos por usuario con conmutación de contexto inmediata.
+
+## 2. Core Architecture Rules
+- **Offline-First Mandate:** Todas las lecturas y escrituras deben ejecutarse primero en IndexedDB (vía `Dexie.js`).
+- **Background Sync:** Ninguna operación de creación/edición debe fallar por falta de red. Se encolan en Workbox SyncQueue.
+- **Context Filtering:** Todo componente de dashboard, historial, alertas o reportes DEBE estar suscrito al `activeVehicleId` del estado global (Pinia/Zustand).
+
+## 3. Strict Business Rules
+1. **Límite de Vehículos:** Nunca permitir la creación de un 3er vehículo por usuario (`maxVehicles: 2`).
+2. **Botiquín Unificado:** Solo existe 1 registro de botiquín por vehículo y maneja una única fecha global de vencimiento.
+3. **Licencias de Conducción:** Se gestionan a nivel de usuario (`UserProfile`), separadas estrictamente en Categoría A (Motos) y Categoría B (Carros).
+4. **Cálculo de Consumo:** El indicador de Km/Galón solo se procesa si `isFullTank === true` en tanqueos consecutivos.
+5. **Normativa Colombia:**
+   - Llantas: Límite crítico legal a los `1.6 mm` de profundidad de labrado.
+   - Notificaciones Push de Pico y Placa a las 6:00 AM basadas en el último dígito de la placa y `cityCode`.
+
+## 4. UI/UX & Brand Tone
+- **Nombre de Marca:** A Los Pits (referencia eufórica de rendimiento y paradas técnicas).
+- **Estilo:** Dark/Light mode con acentos deportivos (estilo dashboard automotriz), componentes limpios, lectura rápida de métricas e interacción optimizada para uso con una sola mano en móviles.
+- **Client-Side PDF:** La Hoja de Vida/Expediente digital se compila exclusivamente en el cliente mediante `jsPDF`.
+
+## 5. Coding Standards
+- Utilizar TypeScript estricto. Respetar siempre las interfaces definidas en `02-data-model.spec.md`.
+- No introducir librerías externas pesadas que comprometan el rendimiento de carga o el Service Worker de la PWA.
